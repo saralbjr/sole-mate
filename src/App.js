@@ -1,7 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import './App.css';
 
-// Layout Components
+// Layout components
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -20,31 +21,30 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import NotFound from './pages/NotFound';
-import './App.css';
 
 function App() {
     return (
         <div className="App">
-            <Header />
+            <Header siteName="SoleMate" />
             <main>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/shop" element={<Shop />} />
-                    <Route path="/shop/:id" element={<ProductDetail />} />
+                    <Route path="/product/:id" element={<ProductDetail />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/account" element={<Account />} />
-                    <Route path="/about" element={<AboutUs />} />
+                    <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:id" element={<BlogDetail />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
-            <Footer />
+            <Footer siteName="SoleMate" />
         </div>
     );
 }

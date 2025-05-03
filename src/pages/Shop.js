@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import ProductCard from '../components/product/ProductCard';
-import products from '../data/products';
+import { products } from '../data/productData';
 import './Shop.css';
 
 const Shop = () => {
@@ -90,6 +90,15 @@ const Shop = () => {
     return (
         <div className="shop-page py-5">
             <div className="container">
+                {/* Shop Banner */}
+                <div className="shop-banner mb-5">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80" alt="Shop Banner" className="img-fluid" />
+                    <div className="shop-banner-content">
+                        <h1>Find Your Perfect Pair</h1>
+                        <p>Quality footwear for every lifestyle</p>
+                    </div>
+                </div>
+
                 <div className="row">
                     {/* Shop Sidebar - Filters */}
                     <div className="col-lg-3">
@@ -168,6 +177,26 @@ const Shop = () => {
                                             <label className="form-check-label" htmlFor="filter-instock">
                                                 In Stock
                                             </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Featured Product */}
+                            <div className="card mb-4">
+                                <div className="card-header bg-primary text-white">
+                                    <h4 className="m-0">Featured</h4>
+                                </div>
+                                <div className="card-body">
+                                    <div className="featured-product">
+                                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Featured Product" className="img-fluid mb-3" />
+                                        <h5>Air Glide Running Shoes</h5>
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span className="text-decoration-line-through text-muted me-2">$129.99</span>
+                                                <span className="fw-bold text-danger">$99.99</span>
+                                            </div>
+                                            <span className="badge bg-danger">SALE</span>
                                         </div>
                                     </div>
                                 </div>

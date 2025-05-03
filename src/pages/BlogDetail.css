@@ -1,5 +1,5 @@
 .blog-detail-page {
-  color: #333;
+  color: #444;
 }
 
 /* Breadcrumb */
@@ -49,7 +49,6 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  line-height: 1.3;
   color: #333;
 }
 
@@ -57,31 +56,38 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  color: #888;
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-meta span {
+  margin-right: 1.5rem;
+  color: #777;
   font-size: 0.9rem;
 }
 
-.blog-meta span i {
-  margin-right: 0.5rem;
-  color: #ff6b6b;
+.blog-meta i {
+  margin-right: 5px;
 }
 
 /* Featured Image */
 .blog-featured-image {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .blog-featured-image img {
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 /* Blog Content */
 .blog-content {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: #444;
 }
@@ -96,9 +102,9 @@
 
 .blog-content h2 {
   font-size: 1.8rem;
-  font-weight: 600;
   margin: 2rem 0 1rem;
   color: #333;
+  font-weight: 600;
 }
 
 .blog-content h3 {
@@ -108,12 +114,14 @@
   color: #444;
 }
 
-.blog-content ul {
-  padding-left: 1.5rem;
+.blog-content ul,
+.blog-content ol {
   margin-bottom: 1.5rem;
+  padding-left: 2rem;
 }
 
-.blog-content ul li {
+.blog-content ul li,
+.blog-content ol li {
   margin-bottom: 0.5rem;
 }
 
@@ -122,10 +130,10 @@
 }
 
 .blog-content blockquote {
-  margin: 2rem 0;
-  padding: 1.5rem 2rem;
+  border-left: 4px solid #007bff;
+  padding: 1rem 1.5rem;
   background-color: #f8f9fa;
-  border-left: 4px solid #ff6b6b;
+  margin: 1.5rem 0;
   font-style: italic;
 }
 
@@ -142,9 +150,9 @@
 
 /* Tags */
 .blog-tags {
-  margin: 2rem 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .blog-tags .tag {
@@ -166,59 +174,38 @@
 
 /* Share Links */
 .blog-share {
-  margin: 1.5rem 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid #eee;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 }
 
-.share-link {
+.blog-share a {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  align-items: center;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  margin-right: 0.8rem;
-  color: white;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
 }
 
-.share-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.share-link.facebook {
-  background-color: #3b5998;
-}
-
-.share-link.twitter {
-  background-color: #1da1f2;
-}
-
-.share-link.pinterest {
-  background-color: #bd081c;
-}
-
-.share-link.linkedin {
-  background-color: #0077b5;
+.blog-share a:hover {
+  background-color: #007bff;
+  color: #fff !important;
 }
 
 /* Author Bio */
 .author-bio {
+  border: none;
   background-color: #f8f9fa;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 2rem;
   margin: 2.5rem 0;
 }
 
 .author-bio img {
   border: 3px solid #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .author-bio h4 {
@@ -264,15 +251,15 @@
 }
 
 .comments-section h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid #eee;
+  font-weight: 600;
+  color: #333;
 }
 
 .comment {
   margin-bottom: 1.5rem;
+  border: none;
 }
 
 .comment.comment-reply {
@@ -458,6 +445,7 @@
 .recent-post {
   padding: 1rem 0;
   border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
 }
 
 .recent-post:first-child {
@@ -471,6 +459,7 @@
 
 .recent-post img {
   border-radius: 5px;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .recent-post-content {
@@ -490,7 +479,7 @@
 }
 
 .recent-post-content h5 a:hover {
-  color: #ff6b6b;
+  color: #007bff;
 }
 
 .post-date {
@@ -556,6 +545,30 @@
   color: #333;
 }
 
+/* Shoe-specific accent colors */
+.badge.bg-primary {
+  background-color: #007bff !important;
+}
+
+.badge.bg-light {
+  transition: all 0.3s ease;
+}
+
+.badge.bg-light:hover {
+  background-color: #007bff !important;
+  color: #fff !important;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 991px) {
   .blog-title {
@@ -577,11 +590,15 @@
   .sidebar-widget {
     padding: 1.2rem;
   }
+
+  .sidebar {
+    margin-top: 3rem;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .blog-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .blog-content {
@@ -589,7 +606,7 @@
   }
 
   .blog-content h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .blog-content h3 {
