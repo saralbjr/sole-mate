@@ -1,75 +1,396 @@
+/* Home Page Styles */
+
+/* Hero Section */
 .hero-section {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
-.hero-slide {
-  height: 500px;
-  padding: 40px 0;
+.carousel-image {
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.carousel-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: white;
+}
+
+.carousel-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.carousel-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #ff5252;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 24px;
+}
+
+.benefit-content h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.benefit-content p {
+  color: #666;
+  margin: 0;
+}
+
+/* Categories Section */
+.categories-section {
+  padding: 80px 0;
 }
 
 .section-title {
-  position: relative;
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
   font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: #ff6a00;
-  margin: 15px auto 0;
+.section-title p {
+  color: #666;
+  font-size: 1.1rem;
 }
 
-.category-box {
-  overflow: hidden;
+.category-card {
+  position: relative;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
 }
 
-.category-box img {
-  transition: transform 0.5s ease;
-  width: 100%;
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.category-image {
   height: 250px;
-  object-fit: cover;
+  overflow: hidden;
 }
 
-.category-box:hover img {
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.category-card:hover .category-image img {
   transform: scale(1.05);
 }
 
-.category-info {
+.category-content {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 20px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.category-info h3 {
+.category-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.category-content p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
-.banner {
-  background-image: linear-gradient(45deg, #ff6a00, #ff9a44);
-  border-radius: 10px;
+/* Featured Products Section */
+.featured-products-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
 }
 
-.newsletter-form .form-control {
-  height: 50px;
-  border-radius: 4px 0 0 4px;
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #333;
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 2px solid #ff6b6b;
 }
 
-.newsletter-form .btn {
-  height: 50px;
-  border-radius: 0 4px 4px 0;
-  padding-left: 20px;
-  padding-right: 20px;
+.btn-secondary:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* Split Section (New Arrivals and Sale) */
+.split-section {
+  padding: 80px 0;
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: #ff6b6b;
+  padding: 10px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 1px solid #ff6b6b;
+}
+
+.btn-outline:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 100px 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.cta-content {
+  position: relative;
+  color: white;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.app-btn {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.app-btn i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.app-btn span {
+  font-weight: 600;
+}
+
+.app-btn:hover {
+  background-color: #ff6b6b;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Instagram Section */
+.instagram-section {
+  padding: 80px 0;
+}
+
+.instagram-feed {
+  margin: 0 -5px;
+}
+
+.instagram-item {
+  display: block;
+  margin: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.instagram-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 107, 107, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.instagram-overlay i {
+  color: white;
+  font-size: 2rem;
+}
+
+.instagram-item:hover img {
+  transform: scale(1.05);
+}
+
+.instagram-item:hover .instagram-overlay {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .carousel-image {
+    height: 500px;
+  }
+
+  .carousel-content h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-image {
+    height: 400px;
+  }
+
+  .carousel-content {
+    padding-left: 5%;
+    padding-right: 5%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    align-items: center;
+    text-align: center;
+  }
+
+  .carousel-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .carousel-content p {
+    font-size: 1rem;
+  }
+
+  .benefit-item {
+    margin-bottom: 20px;
+  }
+
+  .cta-content {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .app-buttons {
+    justify-content: center;
+  }
 }

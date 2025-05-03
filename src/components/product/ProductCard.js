@@ -1,81 +1,96 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaStar, FaHeart, FaEye, FaShoppingCart } from 'react-icons/fa';
+import { FaHeart, FaShoppingCart, FaEye } from 'react-icons/fa';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
-    const { id, name, price, salePrice, rating, images, isNew, isSale, isHot } = product;
+    const {
+        id,
+        name,
+        price,
+        salePrice,
+        image,
+        category,
+        rating,
+        isNew,
+        isSale
+    } = product;
 
-    // Calculate discount percentage if on sale
-    const discountPercentage = salePrice ? Math.round(((price - salePrice) / price) * 100) : 0;
+    // Calculate discount percentage if there's a sale price
+    const discountPercentage = salePrice
+        ? Math.round(((price - salePrice) / price) * 100)
+        : 0;
+
+    // Generate stars based on rating
+    const renderStars = (rating) => {
+        const stars = [];
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 >= 0.5;
+
+        for (let i = 0; i < fullStars; i++) {
+            stars.push(<i key={`star-${i}`} className="fas fa-star"></i>);
+        }
+
+        if (hasHalfStar) {
+            stars.push(<i key="half-star" className="fas fa-star-half-alt"></i>);
+        }
+
+        const emptyStars = 5 - stars.length;
+        for (let i = 0; i < emptyStars; i++) {
+            stars.push(<i key={`empty-star-${i}`} className="far fa-star"></i>);
+        }
+
+        return stars;
+    };
 
     return (
-        <div className="product-card card h-100">
-            <div className="product-image position-relative">
+        <div className="product-card">
+            <div className="product-image">
                 <Link to={`/product/${id}`}>
-                    <img
-                        src={images[0]}
-                        className="card-img-top"
-                        alt={name}
-                    />
+                    <img src={image} alt={name} />
                 </Link>
 
                 {/* Product badges */}
                 <div className="product-badges">
-                    {isNew && <span className="badge bg-success">New</span>}
-                    {isSale && <span className="badge bg-danger">Sale</span>}
-                    {isHot && <span className="badge bg-warning">Hot</span>}
-                    {salePrice && <span className="badge bg-danger discount">{discountPercentage}% Off</span>}
+                    {isNew && <span className="badge new">New</span>}
+                    {isSale && <span className="badge sale">{discountPercentage}% Off</span>}
                 </div>
 
                 {/* Quick action buttons */}
                 <div className="product-actions">
-                    <button className="btn btn-light rounded-circle" title="Add to wishlist">
-                        <FaHeart className="text-danger" />
+                    <button className="action-btn" title="Add to Wishlist">
+                        <FaHeart />
                     </button>
-                    <button className="btn btn-light rounded-circle" title="Quick view">
-                        <FaEye />
-                    </button>
-                    <button className="btn btn-light rounded-circle" title="Add to cart">
+                    <button className="action-btn" title="Add to Cart">
                         <FaShoppingCart />
                     </button>
+                    <Link to={`/product/${id}`} className="action-btn" title="Quick View">
+                        <FaEye />
+                    </Link>
                 </div>
             </div>
 
-            <div className="card-body d-flex flex-column">
-                <div className="mb-1">
-                    {/* Star rating */}
-                    <div className="product-rating">
-                        {[...Array(5)].map((_, i) => (
-                            <FaStar
-                                key={i}
-                                className={i < Math.floor(rating) ? "text-warning" : "text-muted"}
-                            />
-                        ))}
-                        <span className="ms-1 text-muted small">({rating.toFixed(1)})</span>
-                    </div>
+            <div className="product-info">
+                <span className="product-category">{category}</span>
+                <h3 className="product-name">
+                    <Link to={`/product/${id}`}>{name}</Link>
+                </h3>
+
+                <div className="product-rating">
+                    {renderStars(rating)}
+                    <span className="rating-count">({product.reviews})</span>
                 </div>
 
-                <h5 className="card-title">
-                    <Link to={`/product/${id}`} className="text-decoration-none text-dark product-name">
-                        {name}
-                    </Link>
-                </h5>
-
-                <div className="product-price mt-auto">
+                <div className="product-price">
                     {salePrice ? (
                         <>
-                            <span className="text-danger fw-bold me-2">${salePrice.toFixed(2)}</span>
-                            <span className="text-muted text-decoration-line-through">${price.toFixed(2)}</span>
+                            <span className="current-price">${salePrice.toFixed(2)}</span>
+                            <span className="old-price">${price.toFixed(2)}</span>
                         </>
                     ) : (
-                        <span className="fw-bold">${price.toFixed(2)}</span>
+                        <span className="current-price">${price.toFixed(2)}</span>
                     )}
                 </div>
-
-                <Link to={`/product/${id}`} className="btn btn-primary mt-2">
-                    View Details
-                </Link>
             </div>
         </div>
     );

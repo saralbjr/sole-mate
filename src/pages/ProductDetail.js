@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FaStar, FaHeart, FaShoppingCart, FaShareAlt, FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from 'react-icons/fa';
-import products from '../data/products';
+import { products } from '../data/productData';
 import ProductCard from '../components/product/ProductCard';
 import './ProductDetail.css';
 
@@ -11,6 +11,7 @@ const ProductDetail = () => {
     const [loading, setLoading] = useState(true);
     const [quantity, setQuantity] = useState(1);
     const [selectedColor, setSelectedColor] = useState('');
+    const [selectedSize, setSelectedSize] = useState('');
     const [activeTab, setActiveTab] = useState('description');
     const [mainImage, setMainImage] = useState('');
     const [relatedProducts, setRelatedProducts] = useState([]);
@@ -24,6 +25,7 @@ const ProductDetail = () => {
             setProduct(foundProduct);
             setMainImage(foundProduct.images[0]);
             setSelectedColor(foundProduct.colors[0]);
+            setSelectedSize(foundProduct.sizes[0]);
 
             // Find related products (same category, excluding current product)
             const related = products
@@ -44,6 +46,10 @@ const ProductDetail = () => {
 
     const handleColorSelect = (color) => {
         setSelectedColor(color);
+    };
+
+    const handleSizeSelect = (size) => {
+        setSelectedSize(size);
     };
 
     const handleImageClick = (image) => {
@@ -139,7 +145,7 @@ const ProductDetail = () => {
                                             />
                                         ))}
                                     </div>
-                                    <span className="text-muted">({product.rating.toFixed(1)}) - {product.reviewCount} Reviews</span>
+                                    <span className="text-muted">({product.rating.toFixed(1)}) - {product.reviews} Reviews</span>
                                 </div>
                                 <p className="mb-2">
                                     <span className="text-muted">Availability:</span>
@@ -148,14 +154,17 @@ const ProductDetail = () => {
                                     </span>
                                 </p>
                                 <p className="mb-2">
-                                    <span className="text-muted">SKU:</span> FURN-{product.id.toString().padStart(4, '0')}
+                                    <span className="text-muted">SKU:</span> SHOE-{product.id.toString().padStart(4, '0')}
+                                </p>
+                                <p className="mb-2">
+                                    <span className="text-muted">Brand:</span> {product.brand}
                                 </p>
                             </div>
 
                             <div className="product-price mb-4">
                                 {product.salePrice ? (
                                     <>
-                                        <span className="new-price text-danger fw-bold me-2">${product.salePrice.toFixed(2)}</span>
+                                        <span className="new-price text-primary fw-bold me-2">${product.salePrice.toFixed(2)}</span>
                                         <span className="old-price text-muted text-decoration-line-through">${product.price.toFixed(2)}</span>
                                         <span className="discount-badge ms-2">
                                             {Math.round(((product.price - product.salePrice) / product.price) * 100)}% Off
@@ -182,6 +191,22 @@ const ProductDetail = () => {
                                                 onClick={() => handleColorSelect(color)}
                                             >
                                                 <span>{color}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Size Selection */}
+                                <div className="size-options mb-3">
+                                    <label className="fw-bold d-block mb-2">Size:</label>
+                                    <div className="d-flex gap-2 flex-wrap">
+                                        {product.sizes.map((size, index) => (
+                                            <div
+                                                key={index}
+                                                className={`size-option ${selectedSize === size ? 'active' : ''}`}
+                                                onClick={() => handleSizeSelect(size)}
+                                            >
+                                                <span>{size}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -274,7 +299,7 @@ const ProductDetail = () => {
                                 className={`nav-link ${activeTab === 'reviews' ? 'active' : ''}`}
                                 onClick={() => setActiveTab('reviews')}
                             >
-                                Reviews ({product.reviewCount})
+                                Reviews ({product.reviews})
                             </button>
                         </li>
                     </ul>
@@ -292,11 +317,16 @@ const ProductDetail = () => {
                                     <tbody>
                                         <tr>
                                             <th scope="row">Dimensions</th>
-                                            <td>Width: {product.dimensions.width}, Height: {product.dimensions.height}, Depth: {product.dimensions.depth}</td>
+                                            <td>
+                                                {product.dimensions ?
+                                                    `Width: ${product.dimensions.width}, Height: ${product.dimensions.height}, Depth: ${product.dimensions.depth}` :
+                                                    'Standard shoe dimensions based on size'
+                                                }
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Material</th>
-                                            <td>{product.material}</td>
+                                            <td>{product.material || 'Synthetic and textile materials'}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Colors</th>
@@ -330,7 +360,7 @@ const ProductDetail = () => {
                                                         />
                                                     ))}
                                                 </div>
-                                                <p className="text-muted">{product.reviewCount} reviews</p>
+                                                <p className="text-muted">{product.reviews} reviews</p>
                                             </div>
                                         </div>
                                         <div className="col-md-8">

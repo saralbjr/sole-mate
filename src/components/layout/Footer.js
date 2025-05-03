@@ -1,72 +1,88 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaTwitter, FaInstagram, FaPinterestP, FaYoutube } from 'react-icons/fa';
+import './Footer.css';
 
-const Footer = () => {
+const Footer = ({ siteName = "SoleMate" }) => {
     return (
-        <footer className="bg-dark text-light pt-5 pb-3">
-            <div className="container">
-                <div className="row">
-                    {/* About */}
-                    <div className="col-lg-3 col-md-6 mb-4">
-                        <h5 className="mb-3">SHOME</h5>
-                        <p className="mb-3">We provide the best home furniture and accessories for your space. Explore our collection and transform your home.</p>
-                        <div className="d-flex">
-                            <a href="https://facebook.com" className="me-2 text-light"><FaFacebookF /></a>
-                            <a href="https://twitter.com" className="me-2 text-light"><FaTwitter /></a>
-                            <a href="https://instagram.com" className="me-2 text-light"><FaInstagram /></a>
-                            <a href="https://pinterest.com" className="me-2 text-light"><FaPinterestP /></a>
-                            <a href="https://youtube.com" className="text-light"><FaYoutube /></a>
+        <footer className="site-footer">
+            <div className="footer-top">
+                <div className="container">
+                    <div className="row">
+                        {/* About */}
+                        <div className="col-lg-4 col-md-6">
+                            <div className="footer-widget about-widget">
+                                <h4 className="widget-title">{siteName}</h4>
+                                <p>
+                                    We're dedicated to helping you find the perfect shoes for every occasion.
+                                    Quality, comfort, and style are at the heart of everything we do.
+                                </p>
+                                <div className="social-links">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Quick Links */}
+                        <div className="col-lg-2 col-md-6">
+                            <div className="footer-widget">
+                                <h4 className="widget-title">Shop</h4>
+                                <ul className="footer-menu">
+                                    <li><Link to="/shop?category=running">Running Shoes</Link></li>
+                                    <li><Link to="/shop?category=casual">Casual Shoes</Link></li>
+                                    <li><Link to="/shop?category=athletic">Athletic Shoes</Link></li>
+                                    <li><Link to="/shop?category=formal">Formal Shoes</Link></li>
+                                    <li><Link to="/shop?category=hiking">Hiking Boots</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Information */}
+                        <div className="col-lg-2 col-md-6">
+                            <div className="footer-widget">
+                                <h4 className="widget-title">Information</h4>
+                                <ul className="footer-menu">
+                                    <li><Link to="/about-us">About Us</Link></li>
+                                    <li><Link to="/contact">Contact Us</Link></li>
+                                    <li><Link to="/blog">Blog</Link></li>
+                                    <li><Link to="/faq">FAQs</Link></li>
+                                    <li><Link to="/size-guide">Size Guide</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Newsletter */}
+                        <div className="col-lg-4 col-md-6">
+                            <div className="footer-widget">
+                                <h4 className="widget-title">Newsletter</h4>
+                                <p>Sign up for our newsletter to receive updates on new arrivals, special offers, and exclusive content.</p>
+                                <form className="newsletter-form">
+                                    <input type="email" placeholder="Your email address" required />
+                                    <button type="submit">Subscribe</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-
-                    {/* Quick Links */}
-                    <div className="col-lg-3 col-md-6 mb-4">
-                        <h5 className="mb-3">Quick Links</h5>
-                        <ul className="list-unstyled">
-                            <li className="mb-2"><Link to="/" className="text-light">Home</Link></li>
-                            <li className="mb-2"><Link to="/shop" className="text-light">Shop</Link></li>
-                            <li className="mb-2"><Link to="/about" className="text-light">About Us</Link></li>
-                            <li className="mb-2"><Link to="/blog" className="text-light">Blog</Link></li>
-                            <li className="mb-2"><Link to="/contact" className="text-light">Contact Us</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Account */}
-                    <div className="col-lg-3 col-md-6 mb-4">
-                        <h5 className="mb-3">Account</h5>
-                        <ul className="list-unstyled">
-                            <li className="mb-2"><Link to="/account" className="text-light">My Account</Link></li>
-                            <li className="mb-2"><Link to="/cart" className="text-light">Shopping Cart</Link></li>
-                            <li className="mb-2"><Link to="/wishlist" className="text-light">Wishlist</Link></li>
-                            <li className="mb-2"><Link to="/checkout" className="text-light">Checkout</Link></li>
-                            <li className="mb-2"><Link to="/login" className="text-light">Login/Register</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Newsletter */}
-                    <div className="col-lg-3 col-md-6 mb-4">
-                        <h5 className="mb-3">Newsletter</h5>
-                        <p className="mb-3">Subscribe to our newsletter for the latest updates and offers.</p>
-                        <form>
-                            <div className="input-group mb-3">
-                                <input type="email" className="form-control" placeholder="Your Email" />
-                                <button className="btn btn-primary" type="submit">Subscribe</button>
-                            </div>
-                        </form>
-                        <p className="small">We respect your privacy. Unsubscribe at any time.</p>
-                    </div>
                 </div>
+            </div>
 
-                <hr className="my-4 bg-secondary" />
-
-                {/* Bottom Footer */}
-                <div className="row">
-                    <div className="col-md-6 text-center text-md-start">
-                        <p className="mb-0">&copy; {new Date().getFullYear()} Shome. All rights reserved.</p>
-                    </div>
-                    <div className="col-md-6 text-center text-md-end">
-                        <img src="https://via.placeholder.com/200x30" alt="Payment Methods" className="img-fluid" />
+            <div className="footer-bottom">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <p className="copyright">
+                                &copy; {new Date().getFullYear()} {siteName}. All Rights Reserved.
+                            </p>
+                        </div>
+                        <div className="col-md-6">
+                            <ul className="footer-bottom-links">
+                                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                                <li><Link to="/terms-conditions">Terms & Conditions</Link></li>
+                                <li><Link to="/shipping-returns">Shipping & Returns</Link></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
