@@ -1,0 +1,138 @@
+.about-us-page {
+  color: #333;
+}
+
+.about-us-page h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.about-us-page h1:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: #ff6b6b;
+}
+
+.about-us-page h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.about-us-page h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.about-us-page .card {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-us-page .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-page .card-img-top {
+  object-fit: cover;
+  height: 250px;
+}
+
+.about-us-page .text-warning i {
+  margin-right: 5px;
+}
+
+/* Hero section styles */
+.about-us-page .card.mb-5 {
+  overflow: hidden;
+}
+
+.about-us-page .card.mb-5 img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.about-us-page .card.mb-5:hover img {
+  transform: scale(1.02);
+}
+
+/* Team member styles */
+.about-us-page .row-cols-md-3 .card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-us-page .row-cols-md-3 .card-img-top {
+  transition: transform 0.4s;
+}
+
+.about-us-page .row-cols-md-3 .card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.about-us-page .text-muted {
+  color: #ff6b6b !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Testimonial styles */
+.about-us-page .col-md-4 .card {
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.about-us-page .col-md-4 .card-body {
+  padding: 1.8rem;
+}
+
+.about-us-page .col-md-4 .card .card-text:last-child {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Values list styles */
+.about-us-page ul.card-text {
+  padding-left: 1.5rem;
+  list-style-type: none;
+}
+
+.about-us-page ul.card-text li {
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.about-us-page ul.card-text li:before {
+  content: "✓";
+  position: absolute;
+  left: -1.5rem;
+  color: #47a447;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-us-page h1 {
+    font-size: 2rem;
+  }
+
+  .about-us-page h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-us-page .card-img-top {
+    height: 200px;
+  }
+}

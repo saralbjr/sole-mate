@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-primary {
+  background-color: #ff6a00;
+  border-color: #ff6a00;
+}
+
+.btn-primary:hover {
+  background-color: #e05e00;
+  border-color: #e05e00;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+}
+
+.nav-link {
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #ff6a00;
+}
+
+.card {
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
