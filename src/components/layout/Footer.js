@@ -47,8 +47,6 @@ const Footer = ({ siteName = "SoleMate" }) => {
                                     <li><Link to="/about-us">About Us</Link></li>
                                     <li><Link to="/contact">Contact Us</Link></li>
                                     <li><Link to="/blog">Blog</Link></li>
-                                    <li><Link to="/faq">FAQs</Link></li>
-                                    <li><Link to="/size-guide">Size Guide</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -76,13 +74,13 @@ const Footer = ({ siteName = "SoleMate" }) => {
                                 &copy; {new Date().getFullYear()} {siteName}. All Rights Reserved.
                             </p>
                         </div>
-                        <div className="col-md-6">
+                        {/* <div className="col-md-6">
                             <ul className="footer-bottom-links">
                                 <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                                 <li><Link to="/terms-conditions">Terms & Conditions</Link></li>
                                 <li><Link to="/shipping-returns">Shipping & Returns</Link></li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

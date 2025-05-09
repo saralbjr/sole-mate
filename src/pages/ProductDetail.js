@@ -164,14 +164,14 @@ const ProductDetail = () => {
                             <div className="product-price mb-4">
                                 {product.salePrice ? (
                                     <>
-                                        <span className="new-price text-primary fw-bold me-2">${product.salePrice.toFixed(2)}</span>
-                                        <span className="old-price text-muted text-decoration-line-through">${product.price.toFixed(2)}</span>
+                                        <span className="new-price text-primary fw-bold me-2">Rs.{product.salePrice.toFixed(2)}</span>
+                                        <span className="old-price text-muted text-decoration-line-through">Rs.{product.price.toFixed(2)}</span>
                                         <span className="discount-badge ms-2">
                                             {Math.round(((product.price - product.salePrice) / product.price) * 100)}% Off
                                         </span>
                                     </>
                                 ) : (
-                                    <span className="price fw-bold">${product.price.toFixed(2)}</span>
+                                    <span className="price fw-bold">Rs.{product.price.toFixed(2)}</span>
                                 )}
                             </div>
 

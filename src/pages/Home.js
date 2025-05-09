@@ -61,7 +61,7 @@ const Home = () => {
                                 </div>
                                 <div className="benefit-content">
                                     <h4>Free Shipping</h4>
-                                    <p>On all orders over $75</p>
+                                    <p>On orders over Rs.7500</p>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@ const Home = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="cta-section" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1511556532299-8f662fc26c06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)' }}>
+            {/* <section className="cta-section" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1511556532299-8f662fc26c06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)' }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
@@ -214,10 +214,10 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Instagram Section */}
-            <section className="instagram-section">
+            {/* <section className="instagram-section">
                 <div className="container">
                     <div className="section-title">
                         <h2>@SoleMate on Instagram</h2>
@@ -274,7 +274,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 };

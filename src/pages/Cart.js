@@ -24,20 +24,20 @@ const Cart = () => {
                             <div className="card-body">
                                 <div className="d-flex justify-content-between mb-2">
                                     <span>Subtotal:</span>
-                                    <span>$0.00</span>
+                                    <span>Rs.0.00</span>
                                 </div>
                                 <div className="d-flex justify-content-between mb-2">
                                     <span>Shipping:</span>
-                                    <span>$0.00</span>
+                                    <span>Rs.0.00</span>
                                 </div>
                                 <div className="d-flex justify-content-between mb-2">
                                     <span>Tax:</span>
-                                    <span>$0.00</span>
+                                    <span>Rs.0.00</span>
                                 </div>
                                 <hr />
                                 <div className="d-flex justify-content-between mb-3">
                                     <strong>Total:</strong>
-                                    <strong>$0.00</strong>
+                                    <strong>Rs.0.00</strong>
                                 </div>
                                 <Link to="/checkout" className="btn btn-primary w-100">Proceed to Checkout</Link>
                             </div>

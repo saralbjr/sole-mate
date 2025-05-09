@@ -40,8 +40,8 @@ const Contact = () => {
                                 <i className="fas fa-map-marker-alt"></i>
                             </div>
                             <h3>Our Location</h3>
-                            <p>123 Furniture Street, Design District</p>
-                            <p>New York, NY 10001</p>
+                            <p>New Baneshwor, Kathmandu</p>
+                            <p>Maharajgunj, Kathmandu</p>
                         </div>
                     </div>
                     <div className="col-md-4 mb-4 mb-md-0">
@@ -50,8 +50,8 @@ const Contact = () => {
                                 <i className="fas fa-phone-alt"></i>
                             </div>
                             <h3>Phone Numbers</h3>
-                            <p>Customer Service: (555) 123-4567</p>
-                            <p>Orders & Support: (555) 765-4321</p>
+                            <p>Customer Service: +977 9812345678</p>
+                            <p>Orders & Support: +977 9878945612</p>
                         </div>
                     </div>
                     <div className="col-md-4">
@@ -60,8 +60,8 @@ const Contact = () => {
                                 <i className="fas fa-envelope"></i>
                             </div>
                             <h3>Email Us</h3>
-                            <p>info@shome-furniture.com</p>
-                            <p>support@shome-furniture.com</p>
+                            <p>info@solemate.com</p>
+                            <p>support@solemate.com</p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ const Contact = () => {
                     {/* Google Map */}
                     <div className="col-lg-6 mb-4 mb-lg-0">
                         <div className="map-container">
-                            <div className="map-placeholder">
+                            {/* <div className="map-placeholder">
                                 <img
                                     src="https://via.placeholder.com/600x400?text=Google+Map"
                                     alt="Store location map"
@@ -81,7 +81,7 @@ const Contact = () => {
                                     <p>Interactive map loading...</p>
                                     <small>(An actual Google Map would be integrated here)</small>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="store-hours mt-4">
                                 <h3>Store Hours</h3>
                                 <table className="table">

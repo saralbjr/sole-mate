@@ -132,8 +132,8 @@ const Shop = () => {
                                         <h5>Price Range</h5>
                                         <div className="price-filter">
                                             <div className="d-flex justify-content-between mb-2">
-                                                <span>${priceRange[0]}</span>
-                                                <span>${priceRange[1]}</span>
+                                                <span>Rs.{priceRange[0]}</span>
+                                                <span>Rs.{priceRange[1]}</span>
                                             </div>
                                             <div className="input-group mb-2">
                                                 <span className="input-group-text">Min</span>
@@ -193,8 +193,8 @@ const Shop = () => {
                                         <h5>Air Glide Running Shoes</h5>
                                         <div className="d-flex justify-content-between align-items-center">
                                             <div>
-                                                <span className="text-decoration-line-through text-muted me-2">$129.99</span>
-                                                <span className="fw-bold text-danger">$99.99</span>
+                                                <span className="text-decoration-line-through text-muted me-2">Rs.129.99</span>
+                                                <span className="fw-bold text-danger">Rs.99.99</span>
                                             </div>
                                             <span className="badge bg-danger">SALE</span>
                                         </div>
