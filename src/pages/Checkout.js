@@ -40,18 +40,18 @@ const Checkout = () => {
                                     </div>
 
                                     <div className="row mb-3">
-                                        <div className="col-md-6">
+                                        {/* <div className="col-md-6">
                                             <label className="form-label">City</label>
                                             <input type="text" className="form-control" required />
-                                        </div>
+                                        </div> */}
                                         <div className="col-md-3">
-                                            <label className="form-label">State</label>
+                                            <label className="form-label">City</label>
                                             <select className="form-select" required>
                                                 <option value="">Select...</option>
-                                                <option>California</option>
-                                                <option>New York</option>
-                                                <option>Texas</option>
-                                                <option>Florida</option>
+                                                <option>Kathmandu</option>
+                                                <option>Bhaktapur</option>
+                                                <option>Lalitpur</option>
+                                                <option>Pokhara</option>
                                             </select>
                                         </div>
                                         <div className="col-md-3">
@@ -121,20 +121,20 @@ const Checkout = () => {
 
                                 <div className="d-flex justify-content-between mb-2">
                                     <span>Subtotal:</span>
-                                    <span>$0.00</span>
+                                    <span>Rs.0.00</span>
                                 </div>
                                 <div className="d-flex justify-content-between mb-2">
                                     <span>Shipping:</span>
-                                    <span>$0.00</span>
+                                    <span>Rs.0.00</span>
                                 </div>
                                 <div className="d-flex justify-content-between mb-2">
                                     <span>Tax:</span>
-                                    <span>$0.00</span>
+                                    <span>Rs.0.00</span>
                                 </div>
                                 <hr />
                                 <div className="d-flex justify-content-between mb-3">
                                     <strong>Total:</strong>
-                                    <strong>$0.00</strong>
+                                    <strong>Rs.0.00</strong>
                                 </div>
 
                                 <button type="submit" className="btn btn-primary w-100">Place Order</button>
