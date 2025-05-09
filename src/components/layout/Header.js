@@ -57,9 +57,6 @@ const Header = ({ siteName = "SoleMate" }) => {
                     </nav>
 
                     <div className="header-icons">
-                        <Link to="/search" className="icon-button">
-                            <i className="fas fa-search"></i>
-                        </Link>
                         <Link to="/account" className="icon-button">
                             <i className="fas fa-user"></i>
                         </Link>

@@ -21,7 +21,7 @@ const AboutUs = () => {
                             <div className="card-body h-100 d-flex flex-column justify-content-center">
                                 <h2 className="card-title">Our Story</h2>
                                 <p className="card-text">
-                                    SoleMate was founded in 2015 with a simple mission: to provide high-quality,
+                                    SoleMate was founded in 2025 with a simple mission: to provide high-quality,
                                     stylish footwear that blends comfort with fashion. What started as a small
                                     boutique shop has grown into a trusted name in the footwear industry,
                                     serving customers across the country.

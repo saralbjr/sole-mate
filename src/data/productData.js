@@ -3,11 +3,11 @@ export const products = [
         id: 1,
         name: "Air Glide Running Shoes",
         category: "Running",
-        price: 129.99,
-        salePrice: 99.99,
+        price: 1299,
+        salePrice: 999,
         image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
         images: [
-            "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+            "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=60",
             "https://images.unsplash.com/photo-1607522370275-f14206abe5d3",
             "https://images.unsplash.com/photo-1562183241-b937e95585b6"
         ],
@@ -26,9 +26,9 @@ export const products = [
         id: 2,
         name: "Urban Street Sneakers",
         category: "Casual",
-        price: 89.99,
+        price: 899,
         salePrice: null,
-        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5",
+        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1608231387042-66d1773070a5",
             "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77",
@@ -49,9 +49,9 @@ export const products = [
         id: 3,
         name: "Pro Court Tennis Shoes",
         category: "Athletic",
-        price: 149.99,
-        salePrice: 129.99,
-        image: "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb",
+        price: 1499,
+        salePrice: 1299,
+        image: "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb",
             "https://images.unsplash.com/photo-1554735490-5974588cbc4f",
@@ -72,9 +72,9 @@ export const products = [
         id: 4,
         name: "Comfort Plus Walking Shoes",
         category: "Walking",
-        price: 79.99,
+        price: 799,
         salePrice: null,
-        image: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2",
+        image: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2",
             "https://images.unsplash.com/photo-1539185441755-769473a23570",
@@ -95,9 +95,9 @@ export const products = [
         id: 5,
         name: "Hiker Trail Boots",
         category: "Hiking",
-        price: 159.99,
+        price: 1599,
         salePrice: null,
-        image: "https://images.unsplash.com/photo-1606890658317-7d14490b76fd",
+        image: "https://images.unsplash.com/photo-1606890658317-7d14490b76fd?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1606890658317-7d14490b76fd",
             "https://images.unsplash.com/photo-1553545985-1e0f4015e5c3",
@@ -118,9 +118,9 @@ export const products = [
         id: 6,
         name: "Speed Trainer Basketball Shoes",
         category: "Basketball",
-        price: 139.99,
-        salePrice: 119.99,
-        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3",
+        price: 1399,
+        salePrice: 1199,
+        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1552346154-21d32810aba3",
             "https://images.unsplash.com/photo-1621665421558-831f91fd0500",
@@ -141,9 +141,9 @@ export const products = [
         id: 7,
         name: "Classic Leather Loafers",
         category: "Formal",
-        price: 119.99,
+        price: 1199,
         salePrice: null,
-        image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4",
+        image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4",
             "https://images.unsplash.com/photo-1531310197839-ccf54634509e",
@@ -164,9 +164,9 @@ export const products = [
         id: 8,
         name: "Flex Gym Training Shoes",
         category: "Training",
-        price: 109.99,
-        salePrice: 89.99,
-        image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa",
+        price: 1099,
+        salePrice: 899,
+        image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa",
             "https://images.unsplash.com/photo-1562183241-b937e95585b6",
@@ -187,9 +187,9 @@ export const products = [
         id: 9,
         name: "Canvas Slip-On Sneakers",
         category: "Casual",
-        price: 59.99,
+        price: 599,
         salePrice: null,
-        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77",
+        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77",
             "https://images.unsplash.com/photo-1604671801908-6f0c6a092c05",
@@ -210,9 +210,9 @@ export const products = [
         id: 10,
         name: "Aqua Water Shoes",
         category: "Water Sports",
-        price: 69.99,
-        salePrice: 49.99,
-        image: "https://images.unsplash.com/photo-1520096459084-096af33f9ea5",
+        price: 699,
+        salePrice: 499,
+        image: "https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?w=400",
         images: [
             "https://images.unsplash.com/photo-1520096459084-096af33f9ea5",
             "https://images.unsplash.com/photo-1617689563472-c66428e83d17",
@@ -233,9 +233,9 @@ export const products = [
         id: 11,
         name: "Desert Suede Chukka Boots",
         category: "Casual",
-        price: 129.99,
+        price: 1299,
         salePrice: null,
-        image: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76",
+        image: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1638247025967-b4e38f787b76",
             "https://images.unsplash.com/photo-1638247113237-61a1622821bc",
@@ -256,9 +256,9 @@ export const products = [
         id: 12,
         name: "Elite Racing Track Spikes",
         category: "Track & Field",
-        price: 149.99,
+        price: 1499,
         salePrice: null,
-        image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a",
+        image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=60",
         images: [
             "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a",
             "https://images.unsplash.com/photo-1562183241-840b812fbcfd",
@@ -281,37 +281,37 @@ export const categories = [
     {
         id: 1,
         name: "Running",
-        image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a",
+        image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=60",
         count: 24
     },
     {
         id: 2,
         name: "Casual",
-        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77",
+        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&q=60",
         count: 36
     },
     {
         id: 3,
         name: "Athletic",
-        image: "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb",
+        image: "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?w=800&q=60",
         count: 18
     },
     {
         id: 4,
         name: "Formal",
-        image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4",
+        image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&q=60",
         count: 15
     },
     {
         id: 5,
         name: "Basketball",
-        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3",
+        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=60",
         count: 12
     },
     {
         id: 6,
         name: "Hiking",
-        image: "https://images.unsplash.com/photo-1606890658317-7d14490b76fd",
+        image: "https://images.unsplash.com/photo-1606890658317-7d14490b76fd?w=800&q=60",
         count: 9
     }
 ];
