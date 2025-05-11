@@ -97,9 +97,14 @@
 }
 
 .action-btn:hover {
-  background-color: #007bff;
+  background-color: #ff6b6b;
   color: white;
   transform: translateY(-3px);
+}
+
+.action-btn.active {
+  background-color: #ff6b6b;
+  color: white;
 }
 
 /* Product Info */
@@ -225,6 +230,10 @@
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

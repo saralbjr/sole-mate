@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { useShop } from '../../context/ShopContext';
 
 const Header = ({ siteName = "SoleMate" }) => {
     const [isNavOpen, setIsNavOpen] = useState(false);
+    const { totalItems, totalWishlistItems } = useShop();
 
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
@@ -62,11 +64,11 @@ const Header = ({ siteName = "SoleMate" }) => {
                         </Link>
                         <Link to="/wishlist" className="icon-button">
                             <i className="fas fa-heart"></i>
-                            <span className="badge">0</span>
+                            <span className="badge">{totalWishlistItems}</span>
                         </Link>
                         <Link to="/cart" className="icon-button">
                             <i className="fas fa-shopping-cart"></i>
-                            <span className="badge">0</span>
+                            <span className="badge">{totalItems}</span>
                         </Link>
                     </div>
                 </div>

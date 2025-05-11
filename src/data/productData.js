@@ -51,7 +51,7 @@ export const products = [
         category: "Athletic",
         price: 1499,
         salePrice: 1299,
-        image: "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?w=800&q=60",
+        image: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?q=80",
         images: [
             "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb",
             "https://images.unsplash.com/photo-1554735490-5974588cbc4f",
