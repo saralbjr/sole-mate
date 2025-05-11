@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart, FaShoppingCart, FaEye } from 'react-icons/fa';
 import './ProductCard.css';
+import { useShop } from '../../context/ShopContext';
 
 const ProductCard = ({ product }) => {
     const [isLoading, setIsLoading] = useState(true);
+    const { addToCart, addToWishlist, wishlistItems } = useShop();
+
+    // Check if product is in wishlist
+    const isInWishlist = wishlistItems.some(item => item.id === product.id);
 
     const {
         id,
@@ -13,35 +18,7 @@ const ProductCard = ({ product }) => {
         salePrice,
         image,
         category,
-        rating,
-        isNew,
-        isSale
     } = product;
-
-    const discountPercentage = salePrice
-        ? Math.round(((price - salePrice) / price) * 100)
-        : 0;
-
-    const renderStars = (rating) => {
-        const stars = [];
-        const fullStars = Math.floor(rating);
-        const hasHalfStar = rating % 1 >= 0.5;
-
-        for (let i = 0; i < fullStars; i++) {
-            stars.push(<i key={`star-${i}`} className="fas fa-star"></i>);
-        }
-
-        if (hasHalfStar) {
-            stars.push(<i key="half-star" className="fas fa-star-half-alt"></i>);
-        }
-
-        const emptyStars = 5 - stars.length;
-        for (let i = 0; i < emptyStars; i++) {
-            stars.push(<i key={`empty-star-${i}`} className="far fa-star"></i>);
-        }
-
-        return stars;
-    };
 
     // Simulate loading time (e.g., 1 second)
     useEffect(() => {
@@ -64,17 +41,25 @@ const ProductCard = ({ product }) => {
                         <Link to={`/product/${id}`}>
                             <img src={image} alt={name} loading="lazy" />
                         </Link>
-
-                        <div className="product-badges">
-                            {isNew && <span className="badge new">New</span>}
-                            {isSale && <span className="badge sale">{discountPercentage}% Off</span>}
-                        </div>
-
                         <div className="product-actions">
-                            <button className="action-btn" title="Add to Wishlist">
+                            <button
+                                className={`action-btn ${isInWishlist ? 'active' : ''}`}
+                                title={isInWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    addToWishlist(product);
+                                }}
+                            >
                                 <FaHeart />
                             </button>
-                            <button className="action-btn" title="Add to Cart">
+                            <button
+                                className="action-btn"
+                                title="Add to Cart"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    addToCart(product);
+                                }}
+                            >
                                 <FaShoppingCart />
                             </button>
                             <Link to={`/product/${id}`} className="action-btn" title="Quick View">
@@ -89,10 +74,10 @@ const ProductCard = ({ product }) => {
                             <Link to={`/product/${id}`}>{name}</Link>
                         </h3>
 
-                        <div className="product-rating">
+                        {/* <div className="product-rating">
                             {renderStars(rating)}
                             <span className="rating-count">({product.reviews})</span>
-                        </div>
+                        </div> */}
 
                         <div className="product-price">
                             {salePrice ? (

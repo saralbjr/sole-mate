@@ -3,10 +3,15 @@ import { useParams, Link } from 'react-router-dom';
 import { FaStar, FaHeart, FaShoppingCart, FaShareAlt, FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from 'react-icons/fa';
 import { products } from '../data/productData';
 import ProductCard from '../components/product/ProductCard';
+import { useShop } from '../context/ShopContext';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
     const { id } = useParams();
+    const { addToCart, addToWishlist, wishlistItems } = useShop();
+
+    // Check if product is in wishlist
+    const [isInWishlist, setIsInWishlist] = useState(false);
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [quantity, setQuantity] = useState(1);
@@ -32,10 +37,14 @@ const ProductDetail = () => {
                 .filter(p => p.category === foundProduct.category && p.id !== productId)
                 .slice(0, 4);
             setRelatedProducts(related);
+
+            // Check if product is in wishlist
+            const productInWishlist = wishlistItems.some(item => item.id === productId);
+            setIsInWishlist(productInWishlist);
         }
 
         setLoading(false);
-    }, [id]);
+    }, [id, wishlistItems]);
 
     const handleQuantityChange = (e) => {
         const value = parseInt(e.target.value);
@@ -243,11 +252,18 @@ const ProductDetail = () => {
 
                                 {/* Action Buttons */}
                                 <div className="product-actions d-flex gap-2 mb-4">
-                                    <button className="btn btn-primary btn-lg flex-grow-1">
+                                    <button
+                                        className="btn btn-primary btn-lg flex-grow-1"
+                                        onClick={() => addToCart(product, quantity)}
+                                    >
                                         <FaShoppingCart className="me-2" />
                                         Add to Cart
                                     </button>
-                                    <button className="btn btn-outline-danger btn-lg">
+                                    <button
+                                        className={`btn ${isInWishlist ? 'btn-danger' : 'btn-outline-danger'} btn-lg`}
+                                        onClick={() => addToWishlist(product)}
+                                        title={isInWishlist ? "Added to Wishlist" : "Add to Wishlist"}
+                                    >
                                         <FaHeart />
                                     </button>
                                 </div>
